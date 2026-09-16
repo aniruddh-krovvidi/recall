@@ -2,6 +2,8 @@
 // built-in tsvector full-text search for lexical retrieval. Every statement
 // here is plain Postgres SQL, so pointing `openDb` at a real Postgres +
 // pgvector is a driver swap, not a rewrite.
+import { mkdirSync } from "node:fs";
+import { dirname } from "node:path";
 import { PGlite } from "@electric-sql/pglite";
 import { vector } from "@electric-sql/pglite-pgvector";
 import type { Chunk } from "./chunk.ts";
@@ -16,6 +18,7 @@ export type Db = {
 export type Hit = Chunk & { score: number };
 
 export async function openDb(dataDir?: string): Promise<Db> {
+  if (dataDir) mkdirSync(dirname(dataDir), { recursive: true });   // data/ is gitignored; PGlite only creates the leaf
   const pg = await PGlite.create({ dataDir, extensions: { vector } });
   await pg.exec("CREATE EXTENSION IF NOT EXISTS vector;");
   return {

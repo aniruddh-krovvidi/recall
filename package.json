@@ -1,0 +1,28 @@
+{
+  "name": "recall",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Semantic search + Q&A over a personal knowledge base, with an evaluation harness",
+  "type": "module",
+  "engines": {
+    "node": ">=22.6"
+  },
+  "scripts": {
+    "gen-notes": "node --experimental-strip-types scripts/gen-notes.ts",
+    "ingest": "node --experimental-strip-types src/ingest.ts",
+    "serve": "node --experimental-strip-types src/server.ts",
+    "eval": "node --experimental-strip-types src/eval.ts",
+    "typecheck": "tsc --noEmit",
+    "test": "node --experimental-strip-types --test test/*.test.ts"
+  },
+  "dependencies": {
+    "@anthropic-ai/sdk": "^0.126.0",
+    "@electric-sql/pglite": "^0.5.8",
+    "@electric-sql/pglite-pgvector": "^0.0.9",
+    "@huggingface/transformers": "^4.3.0"
+  },
+  "devDependencies": {
+    "@types/node": "^22.0.0",
+    "typescript": "^5.9.0"
+  }
+}

@@ -1,0 +1,18 @@
+name: ci
+on: [push, pull_request]
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: { node-version: "22", cache: npm }
+      - run: npm ci
+      - run: npm run typecheck
+      # downloads the ~23 MB embedding model once; tests and eval reuse it
+      - run: npm run ingest
+      - run: npm test
+      # offline eval with the extractive provider; fails on eval-set drift
+      - run: npm run eval
+      - uses: actions/upload-artifact@v4
+        with: { name: eval-results, path: data/results.json }

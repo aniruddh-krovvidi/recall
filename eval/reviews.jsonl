@@ -1,0 +1,15 @@
+{"id": "q03", "verdict": "pass", "reviewer": "ak", "note": "Correct first step and chunk; third sentence (Glacier alert) is unrelated padding."}
+{"id": "q06", "verdict": "pass", "reviewer": "ak", "note": "States 64 twice, from the config chunk and the how-to."}
+{"id": "q11", "verdict": "pass", "reviewer": "ak", "note": "Full escalation ladder (15 min secondary, 30 min lead)."}
+{"id": "q16", "verdict": "pass", "reviewer": "ak", "note": "Complete backoff schedule; two trailing sentences are unrelated."}
+{"id": "q21", "verdict": "pass", "reviewer": "ak", "note": "Says dropped, names the counter, and surfaces the later 6-hour mobile decision."}
+{"id": "q22", "verdict": "fail", "reviewer": "ak", "note": "Never states the 5-minute sync; picked the exporter-retirement decision instead."}
+{"id": "q26", "verdict": "fail", "reviewer": "ak", "note": "Owner never mentioned; 'owns' did not match 'Owner:' in the intro chunk."}
+{"id": "q31", "verdict": "pass", "reviewer": "ak", "note": "Correct decision quoted verbatim."}
+{"id": "q34", "verdict": "pass", "reviewer": "ak", "note": "Includes both the 10% start and the 4.1% / 50% outcome."}
+{"id": "q37", "verdict": "pass", "reviewer": "ak", "note": "Decision sentence includes the reason (render queue backlog)."}
+{"id": "q44", "verdict": "pass", "reviewer": "ak", "note": "Right answer, but also quotes the SEV2 deadline which could confuse a reader."}
+{"id": "q48", "verdict": "fail", "reviewer": "ak", "note": "Quotes the PR step but not the <domain>.<entity> convention; 'naming' did not match 'Names'."}
+{"id": "n01", "verdict": "pass", "reviewer": "ak", "note": "Abstained (confidence 0.14)."}
+{"id": "n02", "verdict": "fail", "reviewer": "ak", "note": "Did not abstain (confidence 0.41); answered with unrelated Prism and ok-CLI text."}
+{"id": "n04", "verdict": "fail", "reviewer": "ak", "note": "Did not abstain (confidence 0.35, exactly at threshold); answered with Tempo runbook text."}
